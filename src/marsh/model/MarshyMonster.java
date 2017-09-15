@@ -27,4 +27,63 @@ public class MarshyMonster
 		
 		
 	}
+	
+	public String toString()
+	{
+		String description = "Je est un monstre, j'm'appelle " + name + ", J'ai " + eyeCount + "des yeux et ";
+		description += tentacleAmount + " tentahkills, butt I hiv " + armCount + " erms! Et est " + hasBloop + ", I hiv a bl00p too en";
+		description += " et dues censory stuff."; 
+		
+		return description; 
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getEyeCount()
+	{
+		return eyeCount;
+	}
+	
+	public int getArmCount()
+	{
+		return armCount;
+	}
+	
+	public double getTentacleAmount()
+	{
+		return tentacleAmount;
+	}
+	
+	public boolean hasBloop()
+	{
+		return hasBloop;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setEyeCount(int eyeCount)
+	{
+		this.eyeCount = eyeCount;
+	}
+	
+	public void setArmCount(int armCount)
+	{
+		this.armCount = armCount;
+	}
+	
+	public void setTentacleAmount(double tentacleAmount)
+	{
+		this.tentacleAmount = tentacleAmount;
+	}
+	
+	public void setBloop(boolean hasBloop)
+	{
+		this.hasBloop = hasBloop;
+	}
 }
