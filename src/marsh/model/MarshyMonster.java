@@ -30,8 +30,9 @@ public class MarshyMonster
 	
 	public String toString()
 	{
-		String description = "Je est un monstre, j'm'appelle " + name + ", j'ai " + eyeCount + "des yeux et ";
-		description += tentacleAmount + " des tentacules, mais j'ai " + armCount + " des bras! C'est " + hasBloop + ", j'ai un bl00p aussi et";
+		// I am bad at french, this may or may not be accurate. 
+		String description = "Je suis un monstre, j'm'appelle " + name + ", j'ai " + eyeCount + " des yeux et ";
+		description += tentacleAmount + " des tentacules, mais j'ai " + armCount + " des bras! C'est " + hasBloop + ", j'ai un bl00p et";
 		description += " il fait pressentir des trucs."; 
 		
 		return description; 
