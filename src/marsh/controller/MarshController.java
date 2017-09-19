@@ -119,6 +119,8 @@ public class MarshController
 		}
 		
 		popup.displayText("Hi there, ready to play god???");
+		String answer = popup.getResponse("What is the air speed of a cococnut laden swallow?");
+		System.out.println(answer);
 		
 		myScanner.close();
 	}
