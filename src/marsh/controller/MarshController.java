@@ -27,6 +27,32 @@ public class MarshController
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
 		
+		System.out.println("How many arms are you actually interested in taking away from this disobedient monster?" + " He has " + currentMonster.getArmCount() + " arms.");
+		// consumed = myScanner.nextint();
+		
+		int armTake = myScanner.nextInt();
+		
+		if (armTake == 0)
+		{
+			System.out.println("Not sadistic? Oh so sad.");
+		}
+		
+		else if(armTake < 0)
+		{
+			System.out.println("You can't take away arms that aren't there you stupid dint.");
+		}
+		
+		else if(armTake - currentMonster.getArmCount() > 0)
+		{
+			System.out.println("You can't take more than that exists you stupid dint.");
+		}
+		
+		else
+		{
+			currentMonster.setArmCount(currentMonster.getArmCount() - armTake);
+			System.out.println("I knew you wanted to rip that monster to shreds go ahead... YES YES!!!!!!! It now has, " + currentMonster.getArmCount() + " arms.");
+		}
+		
 		myScanner.close();
 	}
 }
