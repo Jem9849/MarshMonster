@@ -2,9 +2,18 @@ package marsh.controller;
 
 import marsh.model.MarshyMonster;
 import java.util.Scanner;
+import marsh.view.MarshDisplay;
 
 public class MarshController
 {
+	
+	private MarshDisplay popup;
+	
+	public MarshController()
+	{
+		popup = new MarshDisplay();
+	}
+	
 	public void start()
 	{
 		//MarshyMonster basic = new MarshyMonster();
@@ -108,6 +117,8 @@ public class MarshController
 			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - tentake);
 			System.out.println("Those were removed. Congrats!" + " He only has, " + currentMonster.getTentacleAmount() + " tentacles.");
 		}
+		
+		popup.displayText("Hi there, ready to play god???");
 		
 		myScanner.close();
 	}
