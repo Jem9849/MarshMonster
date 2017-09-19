@@ -62,7 +62,7 @@ public class MarshController
 		
 		else if(armTake < 0)
 		{
-			System.out.println("You can't take away arms that aren't there you stupid dint.");
+			System.out.println("You can't take away arms by not taking arms you stupid dint.");
 		}
 		
 		else if(armTake - currentMonster.getArmCount() > 0)
@@ -76,6 +76,38 @@ public class MarshController
 			System.out.println("I knew you wanted to rip that monster to shreds go ahead... YES YES!!!!!!! It now has, " + currentMonster.getArmCount() + " arms.");
 		}
 		//TAKING ARMS
+		
+		//TAKING TENTACLES
+		
+		System.out.println("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
+		double tentake = myScanner.nextDouble();
+		
+		if (tentake == currentMonster.getTentacleAmount())
+		{
+			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - tentake);
+			System.out.println("There goes all his tentacles. Nicely done.");
+		}
+		
+		else if (tentake < 0)
+		{
+			System.out.println("Seriously? You can't take away by not taking away.");
+		}
+		
+		else if (tentake - currentMonster.getTentacleAmount() > 0)
+		{
+			System.out.println("You can't take more than exists. Okay?");
+		}
+		
+		else if (tentake == 0)
+		{
+			System.out.println("I'm sorry it had to come to this.... non violence. I dislike you.");
+		}
+		
+		else
+		{
+			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - tentake);
+			System.out.println("Those were removed. Congrats!" + " He only has, " + currentMonster.getTentacleAmount() + " tentacles.");
+		}
 		
 		myScanner.close();
 	}
