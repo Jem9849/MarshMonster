@@ -35,11 +35,13 @@ public class MarshController
 		
 		//TAKING EYES
 		//System.out.println(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
-		int consumed;
+		int consumed = 0;
 		String response = popup.getResponse(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
 		
+		if(isValidInteger(response))
+		{
 		consumed = Integer.parseInt(response);
-		
+		}
 		//int consumed = myScanner.nextInt();
 		
 		if (consumed == 0)
@@ -66,10 +68,14 @@ public class MarshController
 		
 		
 		//TAKING ARMS
-		int armTake;
+		int armTake = 0;
 		String response2 = popup.getResponse("How many arms are you actually interested in taking away from this disobedient monster?" + " He has " + currentMonster.getArmCount() + " arms.");
 		// consumed = myScanner.nextint();
+		
+		if (isValidInteger(response2))
+		{
 		armTake = Integer.parseInt(response2);
+		}
 		//int armTake = myScanner.nextInt();
 		
 		if (armTake == 0)
@@ -96,14 +102,18 @@ public class MarshController
 		
 		//TAKING TENTACLES
 		
-		double tentake;
+		double tentake = 0.0;
 		
 		String response3 = popup.getResponse("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
 		
 		//System.out.println("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
 		//double tentake = myScanner.nextDouble();
 		
-		tentake = Double.parseDouble(response3);
+		if(isValidDouble(response3))
+		{
+			tentake = Double.parseDouble(response3);
+		}
+		
 		
 		if (tentake == currentMonster.getTentacleAmount())
 		{
@@ -132,10 +142,44 @@ public class MarshController
 			popup.displayText("Those were removed. Congrats!" + " He only has, " + currentMonster.getTentacleAmount() + " tentacles.");
 		}
 		
-		popup.displayText("Hi there, ready to play god???");
-		String answer = popup.getResponse("What is the air speed of a cococnut laden swallow?");
-		popup.displayText(answer);
+		//TAKING TENTACLES
+		
+		//popup.displayText("Hi there, ready to play god???");
+		//String answer = popup.getResponse("What is the air speed of a cococnut laden swallow?");
+		//popup.displayText(answer);
 		
 		myScanner.close();
+	}
+	
+	private boolean isValidInteger(String sample)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Integer.parseInt(sample);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You need to input an int, " + sample + " is not valid.");
+		}
+		return valid;
+	}
+	
+	private boolean isValidDouble(String sample2)
+	{
+		boolean validation = false;
+		
+		try
+		{
+			Double.parseDouble(sample2);
+			validation = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You need to input a double, " + sample2 + " is not valid.");
+		}
+		return validation;
 	}
 }
