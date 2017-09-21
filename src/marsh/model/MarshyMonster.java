@@ -31,11 +31,23 @@ public class MarshyMonster
 	public String toString()
 	{
 		// I am bad at french, this may or may not be accurate. 
-		String description = "Je suis un monstre, j'm'appelle " + name + ", j'ai " + eyeCount + " des yeux et ";
-		description += tentacleAmount + " des tentacules, mais j'ai " + armCount + " des bras! C'est " + hasBloop + ", j'ai un bl00p et";
-		description += " il fait pressentir des trucs."; 
 		
-		return description; 
+		if (hasBloop == false)
+		{
+			String description = "Je suis un monstre, j'm'appelle " + name + ", j'ai " + eyeCount + " des yeux et ";
+			description += tentacleAmount + " des tentacules, mais j'ai " + armCount + " des bras! C'est " + hasBloop + ", je n'ai pas un bl00p et";
+			description += " il fait pressentir des trucs."; 
+			
+			return description; 
+		}
+		else
+		{
+			String description = "Je suis un monstre, j'm'appelle " + name + ", j'ai " + eyeCount + " des yeux et ";
+			description += tentacleAmount + " des tentacules, mais j'ai " + armCount + " des bras! C'est " + hasBloop + ", j'ai un bl00p et";
+			description += " il fait pressentir des trucs."; 
+			
+			return description; 
+		}		
 	}
 	
 	public String getName()
