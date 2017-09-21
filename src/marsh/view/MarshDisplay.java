@@ -2,6 +2,7 @@ package marsh.view;
 
 import javax.swing.JOptionPane;
 
+// Basically used to display text.
 public class MarshDisplay
 {
 	public void displayText(String textToDisplay)
@@ -9,6 +10,7 @@ public class MarshDisplay
 		JOptionPane.showMessageDialog(null, textToDisplay);
 	}
 	
+	// Basically used to ask for a response then return. 
 	public String getResponse(String questionToDisplay)
 	{
 		String answer = "";

@@ -17,6 +17,7 @@ public class MarshyMonster
 
 	}
 	
+	// Basically sets up things by putting the variables into the local variables.
 	public MarshyMonster(String name, int eyeCount, int arms, int tentacleCount, boolean hasBloop)
 	{
 		this.name = name;
@@ -27,6 +28,8 @@ public class MarshyMonster
 		
 		
 	}
+	
+	// This is basically the monster description, it also has a if statement because of the true and false boolean contained within hasBloop.
 	
 	public String toString()
 	{
@@ -49,6 +52,8 @@ public class MarshyMonster
 			return description; 
 		}		
 	}
+	
+	//These are setters and getters for each monster part. They make it easier and more safe for data transfer.
 	
 	public String getName()
 	{

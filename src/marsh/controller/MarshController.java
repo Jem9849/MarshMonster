@@ -14,6 +14,7 @@ public class MarshController
 		popup = new MarshDisplay();
 	}
 	
+	// Where it starts out and makes a monster Jed out of a constructor. It also removes an arm just to start off.
 	public void start()
 	{
 		//MarshyMonster basic = new MarshyMonster();
@@ -22,13 +23,15 @@ public class MarshController
 		MarshyMonster jed = new MarshyMonster("Murr Bun Jed Monster", 2, 4, 0, true);
 		//System.out.println(jed);
 		popup.displayText(jed.toString());
-		popup.displayText("I am feeling sadistic, I'm going to remove one of Jed's arms.");
+		popup.displayText("You are feeling sadistic? Remove one of Jed's arms.");
 		//System.out.println("I am feeling sadistic, I'm going to remove one of Jed's arms.");
 		jed.setArmCount(jed.getArmCount() - 1);
 		
 		interactWithMonster(jed);
 	}
 	
+	
+	// This massive waste of text starts removing eyes, arms, and tentacles based on input from the user.
 	private void interactWithMonster(MarshyMonster currentMonster)
 	{
 		Scanner myScanner = new Scanner(System.in);
@@ -36,11 +39,11 @@ public class MarshController
 		//TAKING EYES
 		//System.out.println(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
 		int consumed = 0;
-		String response = popup.getResponse(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
+		String responseEyes = popup.getResponse(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
 		
-		if(isValidInteger(response))
+		if(isValidInteger(responseEyes))
 		{
-		consumed = Integer.parseInt(response);
+		consumed = Integer.parseInt(responseEyes);
 		}
 		//int consumed = myScanner.nextInt();
 		
@@ -69,12 +72,12 @@ public class MarshController
 		
 		//TAKING ARMS
 		int armTake = 0;
-		String response2 = popup.getResponse("How many arms are you actually interested in taking away from this disobedient monster?" + " He has " + currentMonster.getArmCount() + " arms.");
+		String responseArm = popup.getResponse("How many arms are you actually interested in taking away from this disobedient monster?" + " He has " + currentMonster.getArmCount() + " arms.");
 		// consumed = myScanner.nextint();
 		
-		if (isValidInteger(response2))
+		if (isValidInteger(responseArm))
 		{
-		armTake = Integer.parseInt(response2);
+		armTake = Integer.parseInt(responseArm);
 		}
 		//int armTake = myScanner.nextInt();
 		
@@ -104,14 +107,14 @@ public class MarshController
 		
 		double tentake = 0.0;
 		
-		String response3 = popup.getResponse("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
+		String responseTent = popup.getResponse("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
 		
 		//System.out.println("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
 		//double tentake = myScanner.nextDouble();
 		
-		if(isValidDouble(response3))
+		if(isValidDouble(responseTent))
 		{
-			tentake = Double.parseDouble(response3);
+			tentake = Double.parseDouble(responseTent);
 		}
 		
 		
@@ -151,35 +154,55 @@ public class MarshController
 		myScanner.close();
 	}
 	
-	private boolean isValidInteger(String sample)
+	// These are guard/protection against wrong input. They are basically validation helpers. 
+	private boolean isValidInteger(String sampleInt)
 	{
 		boolean valid = false;
 		
 		try
 		{
-			Integer.parseInt(sample);
+			Integer.parseInt(sampleInt);
 			valid = true;
 		}
 		catch(NumberFormatException error)
 		{
-			popup.displayText("You need to input an int, " + sample + " is not valid.");
+			popup.displayText("You need to input an int, " + sampleInt + " is not valid.");
 		}
 		return valid;
 	}
 	
-	private boolean isValidDouble(String sample2)
+	private boolean isValidDouble(String sampleDoub)
 	{
 		boolean validation = false;
 		
 		try
 		{
-			Double.parseDouble(sample2);
+			Double.parseDouble(sampleDoub);
 			validation = true;
 		}
 		catch(NumberFormatException error)
 		{
-			popup.displayText("You need to input a double, " + sample2 + " is not valid.");
+			popup.displayText("You need to input a double, " + sampleDoub + " is not valid.");
 		}
 		return validation;
 	}
+	
+	/*private boolean isValidBoolean(String sampBool)
+	{
+		
+	boolean valid = false;
+	
+	try
+	{
+		Boolean.parseBoolean(sampBool);
+		valid = true;
+	}
+	catch(NumberFormatException error)
+	{
+		popup.displayText("Type in a boolean value, " + sampBool + " does not work.");
+	}
+	
+	return valid;
+	}
+    */
 }
