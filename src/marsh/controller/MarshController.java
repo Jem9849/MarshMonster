@@ -16,12 +16,14 @@ public class MarshController
 	
 	public void start()
 	{
-		//MarshyMonster basic = new MarshyMonster();
+		MarshyMonster basic = new MarshyMonster();
 		//System.out.println(basic);
+		popup.displayText(basic.toString());
 		MarshyMonster jed = new MarshyMonster("Murr Bun Jed Monster", 2, 4, 0, true);
-		System.out.println(jed);
-		
-		System.out.println("I am feeling sadistic, I'm going to remove one of Jed's arms.");
+		//System.out.println(jed);
+		popup.displayText(jed.toString());
+		popup.displayText("I am feeling sadistic, I'm going to remove one of Jed's arms.");
+		//System.out.println("I am feeling sadistic, I'm going to remove one of Jed's arms.");
 		jed.setArmCount(jed.getArmCount() - 1);
 		
 		interactWithMonster(jed);
