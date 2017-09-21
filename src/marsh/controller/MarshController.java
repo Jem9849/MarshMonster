@@ -16,9 +16,9 @@ public class MarshController
 	
 	public void start()
 	{
-		MarshyMonster basic = new MarshyMonster();
+		//MarshyMonster basic = new MarshyMonster();
 		//System.out.println(basic);
-		popup.displayText(basic.toString());
+		//popup.displayText(basic.toString());
 		MarshyMonster jed = new MarshyMonster("Murr Bun Jed Monster", 2, 4, 0, true);
 		//System.out.println(jed);
 		popup.displayText(jed.toString());
