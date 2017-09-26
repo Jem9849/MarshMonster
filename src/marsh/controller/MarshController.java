@@ -57,9 +57,11 @@ public class MarshController
 		
 		while(!isValidInteger(responseEyes))
 		{
-			popup.displayText("LOLZ U IDOT!");
-			responseEyes = popup.getResponse("GIVE ME A INTEGER YOU DOUNCE");
+			popup.displayText("You think this is funny?");
+			responseEyes = popup.getResponse("Hand to me an answer to that I actually understand which is an integer.");
 		}
+		
+		consumed = Integer.parseInt(responseEyes);
 		
 		/*if(isValidInteger(responseEyes))
 		{
@@ -95,10 +97,18 @@ public class MarshController
 		String responseArm = popup.getResponse("How many arms are you actually interested in taking away from this disobedient monster?" + " He has " + currentMonster.getArmCount() + " arms.");
 		// consumed = myScanner.nextint();
 		
-		if (isValidInteger(responseArm))
+		while(!isValidInteger(responseArm))
+		{
+			popup.displayText("I bet you are having a laugh.");
+			responseArm = popup.getResponse("Quit messing around and give me an answer that is an integer.");
+		}
+		
+		armTake = Integer.parseInt(responseArm);
+		
+		/*if (isValidInteger(responseArm))
 		{
 		armTake = Integer.parseInt(responseArm);
-		}
+		}*/
 		//int armTake = myScanner.nextInt();
 		
 		if (armTake == 0)
@@ -132,10 +142,18 @@ public class MarshController
 		//System.out.println("How many tentacles do you wish to rip off this monster? He has " + currentMonster.getTentacleAmount());
 		//double tentake = myScanner.nextDouble();
 		
-		if(isValidDouble(responseTent))
+		while(!isValidDouble(responseTent))
+		{
+			popup.displayText("You know you want this monster to suffer. Why do you resist with poor answers?");
+			responseTent = popup.getResponse("Give me a correct answer, I need a double value.");
+		}
+		
+		tentake = Double.parseDouble(responseTent);
+		
+		/*if(isValidDouble(responseTent))
 		{
 			tentake = Double.parseDouble(responseTent);
-		}
+		}*/
 		
 		
 		if (tentake == currentMonster.getTentacleAmount())
