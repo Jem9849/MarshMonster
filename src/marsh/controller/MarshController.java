@@ -55,10 +55,16 @@ public class MarshController
 		int consumed = 0;
 		String responseEyes = popup.getResponse(currentMonster.getName() + " wants to know why you are torturing it? How many eyes do you wish to take away for this disobedient speech?");
 		
-		if(isValidInteger(responseEyes))
+		while(!isValidInteger(responseEyes))
+		{
+			popup.displayText("LOLZ U IDOT!");
+			responseEyes = popup.getResponse("GIVE ME A INTEGER YOU DOUNCE");
+		}
+		
+		/*if(isValidInteger(responseEyes))
 		{
 		consumed = Integer.parseInt(responseEyes);
-		}
+		}*/
 		//int consumed = myScanner.nextInt();
 		
 		if (consumed == 0)
