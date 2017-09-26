@@ -17,12 +17,18 @@ public class MarshController
 	// Where it starts out and makes a monster Jed out of a constructor. It also removes an arm just to start off.
 	public void start()
 	{
-		int count = 0;
-		while(count < 10)
+		//int display = 7 % 3;
+		//int count = 0;
+		/*while(count < 10)
 		{
-			popup.displayText("Am I not the stupidest?");
+			popup.displayText(display);
 			count++;
-		}
+		}*/
+		
+		/*for (count = 0; count < 10; count += 1)
+		{
+			popup.displayText("This is loop # " + (count + 1) + " of ten."); 
+		}*/
 		
 		
 		//MarshyMonster basic = new MarshyMonster();
