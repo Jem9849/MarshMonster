@@ -54,7 +54,14 @@ public class MarshController
 	
 	private void useList()
 	{
-		
+		for (int index = 0; index < marshyList.size(); index++)
+		{
+			MarshyMonster currentMonster = marshyList.get(index);
+			popup.displayText(currentMonster.getName());
+			String updateName = popup.getResponse("Name the pathetic welp.");
+			currentMonster.setName(updateName);
+			popup.displayText("Good, you've named it, " + currentMonster.getName() + ".");
+		}
 	}
 	
 	
