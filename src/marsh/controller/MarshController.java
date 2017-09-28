@@ -3,15 +3,19 @@ package marsh.controller;
 import marsh.model.MarshyMonster;
 import java.util.Scanner;
 import marsh.view.MarshDisplay;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MarshController
 {
 	
 	private MarshDisplay popup;
+	private List<MarshyMonster> marshyList;
 	
 	public MarshController()
 	{
 		popup = new MarshDisplay();
+		marshyList = new ArrayList<MarshyMonster>();
 	}
 	
 	// Where it starts out and makes a monster Jed out of a constructor. It also removes an arm just to start off.
@@ -31,9 +35,9 @@ public class MarshController
 		}*/
 		
 		
-		//MarshyMonster basic = new MarshyMonster();
+		MarshyMonster basic = new MarshyMonster();
 		//System.out.println(basic);
-		//popup.displayText(basic.toString());
+		popup.displayText(basic.toString());
 		MarshyMonster jed = new MarshyMonster("Murr Bun Jed Monster", 2, 4, 0, true);
 		//System.out.println(jed);
 		popup.displayText(jed.toString());
@@ -41,7 +45,16 @@ public class MarshController
 		//System.out.println("I am feeling sadistic, I'm going to remove one of Jed's arms.");
 		jed.setArmCount(jed.getArmCount() - 1);
 		
+		marshyList.add(basic);
+		marshyList.add(jed);
+		useList();
+		
 		interactWithMonster(jed);
+	}
+	
+	private void useList()
+	{
+		
 	}
 	
 	
