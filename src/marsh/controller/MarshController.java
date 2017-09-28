@@ -62,6 +62,11 @@ public class MarshController
 			currentMonster.setName(updateName);
 			popup.displayText("Good, you've named it, " + currentMonster.getName() + ".");
 		}
+		
+		for (MarshyMonster current : marshyList)
+		{
+			popup.displayText("This thing is named " + current.getName());
+		}
 	}
 	
 	
